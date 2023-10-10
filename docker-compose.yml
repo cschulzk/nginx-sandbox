@@ -1,0 +1,16 @@
+services:
+  demo_api:
+    build: ./demo_api
+    networks:
+    - api
+      
+  nginx:
+    build: ./
+    ports:
+      - '8080:80'
+    networks:
+      - api
+
+networks:
+  api:
+  
